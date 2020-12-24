@@ -1,6 +1,6 @@
 # Lectorem
 
-![image info](./lectorem.png)
+![image info](./app/src/main/res/drawable/lectorem.png)
 
 ## Welcome to **Lectorem**, RSS Feed Reader Apps !
 
@@ -33,3 +33,5 @@ For developement, before running the application, you need to clone this project
 2. Open this project With Android Studio :
 
 3. Build Apps :
+
+	![image info](./lectorem.png)
