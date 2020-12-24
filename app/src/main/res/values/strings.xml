@@ -1,0 +1,37 @@
+<!--
+    * Copyright © 2020  Hethsron Jedaël BOUEYA
+    *
+    * This program is free software; you can redistribute it and/or modify
+    * it under the terms of the GNU General Public License as published by
+    * the Free Software Foundation; either version 2 of the License, or
+    * (at your option) any later version.
+    *
+    * This program is distributed in the hope that it will be useful,
+    * but WITHOUT ANY WARRANTY; without even the implied warranty of
+    * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    * GNU General Public License for more details.
+    *
+    * You should have received a copy of the GNU General Public License
+    * along with this program; if not, write to the Free Software
+    * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+-->
+<resources>
+    <string name="app_name">Lectorem</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="add">Add new feed</string>
+    <string name="tool">Toolbox</string>
+    <string name="save">Save new feed</string>
+    <string name="cancel">Cancel</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="pubDate">2020-12-22 23:16:00</string>
+    <string name="link">Link</string>
+    <string name="priority">Priority</string>
+    <string name="title_error">The RSS feed title cannot be empty</string>
+    <string name="description_error">The RSS feed description cannot be empty</string>
+    <string name="link_error">The RSS feed link cannot be empty</string>
+    <string name="url_error">The RSS feed link is not a valid URL</string>
+    <string name="delete_msg">RSS feed deleted</string>
+    <string name="unauthorized">Unauthorized deletion</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

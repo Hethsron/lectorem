@@ -1,0 +1,32 @@
+<!--
+    * Copyright © 2020  Hethsron Jedaël BOUEYA
+    *
+    * This program is free software; you can redistribute it and/or modify
+    * it under the terms of the GNU General Public License as published by
+    * the Free Software Foundation; either version 2 of the License, or
+    * (at your option) any later version.
+    *
+    * This program is distributed in the hope that it will be useful,
+    * but WITHOUT ANY WARRANTY; without even the implied warranty of
+    * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    * GNU General Public License for more details.
+    *
+    * You should have received a copy of the GNU General Public License
+    * along with this program; if not, write to the Free Software
+    * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+-->
+<vector android:autoMirrored="true" android:height="387dp"
+    android:viewportHeight="387" android:viewportWidth="2065"
+    android:width="2065dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="#E41C13" android:pathData="M0,0h2065v386.81h-2065z"/>
+    <path android:fillColor="#FFFFFF" android:pathData="M404.65,98.86l-14.14,32.85l21.24,0l-71.34,166.03l130.78,0l13.94,-32.41l-62.44,0l71.58,-166.46z"/>
+    <path android:fillColor="#FFFFFF" android:pathData="M578.05,98.86h-61.27l-14.19,32.85h21.04c0,0 -10.65,25.75 -18.6,43.29C549.21,164.6 572.16,130.16 578.05,98.86z"/>
+    <path android:fillColor="#FFFFFF" android:pathData="M678.91,131.7l62.65,0l14.13,-32.85l-62.38,0l6.75,-15.69l-39.19,0l-6.73,15.69l-48.54,0l-14.16,32.85l21.24,0l-71.37,166.03l128.9,0l14.13,-32.87l-62.48,0l24.14,-56.26l62.89,0l12.13,-28.27l-62.72,0z"/>
+    <path android:fillColor="#FFFFFF" android:pathData="M848.76,98.86c-65.22,0.46 -92.88,46.45 -107.95,78.67c-43.33,92.17 25.52,119.46 41.21,122.33c8.95,1.64 26.96,1.64 35.92,0l5.73,9.73h33.8l-11.38,-17.46c25.31,-1.65 55.1,-36.32 68.17,-64.02C927.31,200.32 965.58,101.01 848.76,98.86zM872.6,152.27L827.47,257.39l-9.94,-16.24L792.61,255l6.13,9.41c-21.65,0 -18.16,-18.01 -12.84,-28.15l39.37,-91.74c4.6,-10.36 14.09,-14.9 23.49,-15.29C863.68,128.53 878.24,138.43 872.6,152.27z"/>
+    <path android:fillColor="#FFFFFF" android:pathData="M1106.53,98.86l-64.43,149.89c-11.24,22.18 -61.45,20.16 -47.33,-8.17l60.87,-141.71h-85.3l-14.14,32.85h21.06l-41.48,96.58c-16.66,36.49 8.16,70.15 61.94,70.53c55.41,0.44 73.24,-34.05 79.11,-48.32l65.09,-151.63H1106.53z"/>
+    <path android:fillColor="#FFFFFF" android:pathData="M1164.45,98.86l-14.11,32.85l21.12,0l-71.11,166.03l65.33,0l85.43,-198.87z"/>
+    <path android:fillColor="#FFFFFF" android:pathData="M1430.78,172.25c10.46,-26.87 3.36,-73.4 -38.28,-73.4h-36.49h-82.43l-14.13,32.85h21.33l-71.3,166.03h64.13l29.77,-69.19h65.35C1399.09,228.54 1420.66,198.42 1430.78,172.25zM1367.88,170.15c-2.96,5.83 -11.31,25.27 -23.75,25.27h-26.56l27.34,-63.71h19.2C1380.41,131.7 1370.78,164.44 1367.88,170.15z"/>
+    <path android:fillColor="#FFFFFF" android:pathData="M1447.38,131.7l21.27,0l-71.35,166.03l128.89,0l14.09,-32.85l-62.51,0l24.17,-56.3l62.86,0l12.17,-28.25l-62.72,0l20.61,-48.62l62.6,0l14.16,-32.85l-150.09,0z"/>
+    <path android:fillColor="#FFFFFF" android:pathData="M1866.13,98.86l-13.88,33.13l18.92,0l-70.3,165.74l64.91,0l85.43,-198.87z"/>
+    <path android:fillColor="#FFFFFF" android:pathData="M1707.86,235.32c3.97,-8.81 11.33,-25.36 23.86,-25.36h44.73c26.16,0 45.65,-23.64 52.12,-51.07c7.14,-30.12 -14.5,-60.03 -41.62,-60.03h-36.63h-49.41l-14.5,32.94h72.04c16.35,0 11.31,20.99 8.53,27.09c-3.59,7.77 -10.85,20.61 -23.36,20.61h-38.66c-30.54,0 -51.51,30.18 -62.39,56.56l-26.72,61.67h156.22l14.51,-32.94h-91.7C1694.87,264.79 1706.34,238.69 1707.86,235.32z"/>
+</vector>
