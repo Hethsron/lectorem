@@ -2,18 +2,20 @@
 
 ![image info](./app/src/main/res/drawable/lectorem.png)
 
-## Welcome to **Lectorem**, RSS Feed Reader Apps !
+## Welcome to **Lectorem**, Simple RSS Reader application. It’s fast and clean, giving you the freedom to enjoy your favorite news. !
 
 ## Features
 
-*   Filtering RSS Feed By Priority
-*   Adding New RSS Feed
-*   Replacing or Deleting RSS Feed
-*   Show Complete Article
+*	Subscribing to feeds
+*	Renaming feeds (not provided yet, available in major version)
+*	Scrolling feeds
+*   Deleting or unsubscribing to an individual feed (by swiping left/right)
+*	Scrolling news from selected feed
+*	Full-screen mode for articles from news
 
 ## Platforms
 
-Lectorem has been used on a unique plateform :
+Lectorem is compatible with all the devices which use as Operating System :
 
 *   Android OS
 
