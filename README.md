@@ -3,7 +3,7 @@
 ![image info](./app/src/main/res/drawable/lectorem.png)
 
 ## Welcome to **Lectorem** !
-### Simple RSS Reader application. It’s fast and clean, giving you the freedom to enjoy your favorite news. !
+#### Simple RSS Reader application. It’s fast and clean, giving you the freedom to enjoy your favorite news. !
 
 ## Features
 
