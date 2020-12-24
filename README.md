@@ -1,6 +1,6 @@
 # Lectorem
 
-![image info](./app/src/main/res/drawable/lectorem.png)
+![image info](./lectorem.png)
 
 ## Welcome to **Lectorem**, RSS Feed Reader Apps !
 
