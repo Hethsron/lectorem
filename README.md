@@ -24,7 +24,7 @@ Lectorem is designed too have fairly minimal requirements to build and use with 
 ## Development
 For developement, before running the application, you need to clone this project on your local repository, open it with Android Studio and Build Apps as follows :
 
-1. Clone the `deepmwoo` repo locally :
+1. Clone the `lectorem` repo locally :
 
     ```console
         $ git clone https://github.com/Hethsron/lectorem.git
