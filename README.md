@@ -1,6 +1,6 @@
 # Lectorem
 
-![image info](./app/src/main/res/drawable/lectorem.png){: style="float: left"}
+![image info](./app/src/main/res/drawable/lectorem.png)
 
 ## Welcome to **Lectorem**, RSS Feed Reader Apps !
 
@@ -34,4 +34,4 @@ For developement, before running the application, you need to clone this project
 
 3. Build Apps :
 
-	![image info](./lectorem.png){: style="float: center"}
+	![image info](./lectorem.png)
