@@ -31,6 +31,7 @@ package fr.ensisa.boueya.hethsron.lectorem.ui.splashscreen;
  */
 import android.os.Bundle;
 import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import android.os.Handler;
@@ -43,6 +44,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import fr.ensisa.boueya.hethsron.lectorem.R;
+import fr.ensisa.boueya.hethsron.lectorem.databinding.FragmentSplashScreenBinding;
 
 /**
  * @class           SplashScreenFragment
@@ -54,7 +56,7 @@ public class SplashScreenFragment extends Fragment {
     private Animation bottom;                       // Bottom abstraction  of Animation that can be applied to view
     private ImageView image;                        // Image View resources
     private TextView text;                          // A user interface element that displays text to user
-
+    private FragmentSplashScreenBinding binding;    // A Splash Screen Fragment Binding
 
     @NonNull
     @Override
@@ -62,8 +64,11 @@ public class SplashScreenFragment extends Fragment {
         // Set Window flags
         getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_splash_screen, container, false);
+        // Create a view Binding
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_splash_screen, container, false);
+
+        // Return view
+        return binding.getRoot();
     }
 
     @NonNull
@@ -81,8 +86,8 @@ public class SplashScreenFragment extends Fragment {
         bottom = AnimationUtils.loadAnimation(getActivity(), R.anim.bottom_animation);
 
         // Find and Hook views that were identified by the android:id
-        image = view.findViewById(R.id.smv);
-        text = view.findViewById(R.id.stv);
+        image = binding.smv;
+        text = binding.stv;
 
         // Set the next animations to play for these views
         image.setAnimation(top);

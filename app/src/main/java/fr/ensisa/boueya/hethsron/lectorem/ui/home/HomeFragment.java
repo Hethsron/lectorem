@@ -33,6 +33,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -49,6 +50,7 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.List;
 import fr.ensisa.boueya.hethsron.lectorem.R;
+import fr.ensisa.boueya.hethsron.lectorem.databinding.FragmentHomeBinding;
 import fr.ensisa.boueya.hethsron.lectorem.ui.model.Feed;
 import fr.ensisa.boueya.hethsron.lectorem.ui.model.FeedViewModel;
 
@@ -59,6 +61,7 @@ public class HomeFragment extends Fragment {
     private RecyclerView recyclerView;                          // A flexible view for providing a limited window to a large data set
     private FloatingActionButton add;                           // A add floating action button
     private Adapter adapter;                                    // A new adapter for providing child view on demand
+    private FragmentHomeBinding binding;                        // An Home Fragment binding
 
     @NonNull
     @Override
@@ -66,8 +69,11 @@ public class HomeFragment extends Fragment {
         // Set Window flags
         getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        // Inflate the layout for this fragment
-       return inflater.inflate(R.layout.fragment_home, container, false);
+        // Create view DataBinding
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false);
+
+        // Return view
+       return binding.getRoot();
     }
 
     @NonNull
@@ -80,7 +86,7 @@ public class HomeFragment extends Fragment {
     @NonNull
     private void onViewCreated(@NonNull View view) {
         // Configure Toolbar
-        toolbar = view.findViewById(R.id.htb);
+        toolbar = binding.htb;
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
         ((AppCompatActivity)getActivity()).getSupportActionBar().setIcon(R.drawable.ic_action_name);
 
@@ -88,12 +94,12 @@ public class HomeFragment extends Fragment {
         adapter = new Adapter(view.getContext());
 
         // Configure RecyclerView
-        recyclerView = view.findViewById(R.id.hrv);
+        recyclerView = binding.hrv;
         recyclerView.setLayoutManager(new GridLayoutManager(view.getContext(), 2, GridLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(adapter);
 
         // Configure an add FloatingActionButton
-        add = view.findViewById(R.id.add_fab);
+        add = binding.addFab;
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

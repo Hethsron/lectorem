@@ -34,6 +34,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentResultListener;
 import android.view.LayoutInflater;
@@ -42,31 +43,24 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.webkit.WebView;
 import fr.ensisa.boueya.hethsron.lectorem.R;
+import fr.ensisa.boueya.hethsron.lectorem.databinding.FragmentItemBinding;
 
 public class ItemFragment extends Fragment {
 
     private Toolbar toolbar;                                    // A standard Toolbar for use within application content
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        getParentFragmentManager().setFragmentResultListener("itemKey", this, new FragmentResultListener() {
-            @Override
-            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
-                // Configure WebView
-                WebView webView = getView().findViewById(R.id.item_web);
-                webView.loadUrl(result.getString("linkKey"));
-            }
-        });
-    }
+    private WebView webView;                                    // An inner WebView
+    private FragmentItemBinding binding;                        // A Fragment Item binding
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @NonNull ViewGroup container, Bundle savedInstanceState) {
         // Set Window flags
         getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_item, container, false);
+        // Create view DataBinding
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_item, container, false);
+
+        // Return View
+        return  binding.getRoot();
     }
 
     @Override
@@ -77,9 +71,18 @@ public class ItemFragment extends Fragment {
 
     private void onViewCreated(@NonNull View view) {
         // Configure Toolbar
-        toolbar = view.findViewById(R.id.item_ftb);
+        toolbar = binding.itemFtb;
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
         ((AppCompatActivity)getActivity()).getSupportActionBar().setIcon(R.drawable.ic_action_name);
+
+        getParentFragmentManager().setFragmentResultListener("itemKey", this, new FragmentResultListener() {
+            @Override
+            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+                // Configure WebView
+                webView = binding.itemWeb;
+                webView.loadUrl(result.getString("linkKey"));
+            }
+        });
     }
 
 }

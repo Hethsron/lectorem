@@ -35,6 +35,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentResultListener;
 import androidx.navigation.fragment.NavHostFragment;
@@ -47,6 +48,7 @@ import android.view.WindowManager;
 import java.util.ArrayList;
 import java.util.List;
 import fr.ensisa.boueya.hethsron.lectorem.R;
+import fr.ensisa.boueya.hethsron.lectorem.databinding.FragmentNewsBinding;
 import fr.ensisa.boueya.hethsron.lectorem.ui.model.item.Item;
 import fr.ensisa.boueya.hethsron.lectorem.ui.provider.FeedProvider;
 
@@ -55,6 +57,7 @@ public class NewsFragment extends Fragment {
     private Toolbar toolbar;                                    // A standard Toolbar for use within application content
     private RecyclerView recyclerView;                          // A flexible view for providing a limited window to a large data set
     private NewsAdapter adapter;                                // A new adapter for providing child view on demand
+    private FragmentNewsBinding binding;                        // A News Fragment binding
 
     private List<Item> items = new ArrayList<>();               // A dynamic list of items in a RSS feed
 
@@ -82,8 +85,11 @@ public class NewsFragment extends Fragment {
         // Set Window flags
         getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_news, container, false);
+        // Create view DataBinding
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_news, container, false);
+
+        // Return View
+        return binding.getRoot();
     }
 
     @Override
@@ -94,7 +100,7 @@ public class NewsFragment extends Fragment {
 
     private void onViewCreated(@NonNull View view) {
         // Configure Toolbar
-        toolbar = view.findViewById(R.id.news_ftb);
+        toolbar = binding.newsFtb;
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
         ((AppCompatActivity)getActivity()).getSupportActionBar().setIcon(R.drawable.ic_action_name);
 
@@ -103,7 +109,7 @@ public class NewsFragment extends Fragment {
         adapter.setItems(items);
 
         // Configure RecyclerView
-        recyclerView = view.findViewById(R.id.nrv);
+        recyclerView = binding.nrv;
         recyclerView.setLayoutManager(new GridLayoutManager(view.getContext(), 1, GridLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(adapter);
 

@@ -34,6 +34,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
@@ -45,10 +46,12 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.webkit.URLUtil;
+import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import fr.ensisa.boueya.hethsron.lectorem.R;
+import fr.ensisa.boueya.hethsron.lectorem.databinding.FragmentAddFeedBinding;
 import fr.ensisa.boueya.hethsron.lectorem.ui.model.Feed;
 import fr.ensisa.boueya.hethsron.lectorem.ui.model.FeedViewModel;
 
@@ -62,10 +65,11 @@ public class AddFeedFragment extends Fragment {
     private FloatingActionButton cancel;                        // A cancel FloatingActionButton to leave fragment view
     private FloatingActionButton save;                          // A save FloatingActionButton to save given feed in database
     private FloatingActionButton tool;                          // A tool FloatingActionButton to display provided functions
-    private TextView title;                                     // A feed title TextView
-    private TextView description;                               // A feed description TextView
-    private TextView link;                                      // A feed link TextView
+    private EditText title;                                     // A feed title TextView
+    private EditText description;                               // A feed description TextView
+    private EditText link;                                      // A feed link TextView
     private NumberPicker priority;                              // A feed priority NumberPicker
+    private FragmentAddFeedBinding binding;                     // A feed fragment binding
 
     private boolean clicked = false;                            // Default clicked status of tool FloatingActionButton
 
@@ -75,8 +79,11 @@ public class AddFeedFragment extends Fragment {
         // Set Window flags
         getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_feed, container, false);
+        // Create view DataBinding
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_add_feed, container, false);
+
+        // Return View
+        return binding.getRoot();
     }
 
     @Override
@@ -88,17 +95,17 @@ public class AddFeedFragment extends Fragment {
     @NonNull
     private void onViewCreated(@NonNull View view) {
         // Configure Toolbar
-        toolbar = view.findViewById(R.id.add_ftb);
+        toolbar = binding.addFtb;
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
         ((AppCompatActivity)getActivity()).getSupportActionBar().setIcon(R.drawable.ic_action_name);
 
         // Configure TextView
-        title = view.findViewById(R.id.user_title);
-        description = view.findViewById(R.id.user_description);
-        link = view.findViewById(R.id.user_link);
+        title = binding.userTitle;
+        description = binding.userDescription;
+        link = binding.userLink;
 
         // Configure NumberPicker
-        priority = view.findViewById(R.id.user_priority);
+        priority = binding.userPriority;
         priority.setMinValue(1);
         priority.setMaxValue(10);
 
@@ -109,7 +116,7 @@ public class AddFeedFragment extends Fragment {
         rotate_open = AnimationUtils.loadAnimation(getActivity(), R.anim.rotate_open);
 
         // Configure a tool FloatingActionButton
-        tool = view.findViewById(R.id.tool_fab);
+        tool = binding.toolFab;
         tool.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -118,7 +125,7 @@ public class AddFeedFragment extends Fragment {
         });
 
         // Configure a cancel FloatingActionButton
-        cancel = view.findViewById(R.id.cancel_fab);
+        cancel = binding.cancelFab;
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -129,7 +136,7 @@ public class AddFeedFragment extends Fragment {
         });
 
         // Configure a save FloatingActionButton
-        save = view.findViewById(R.id.save_fab);
+        save = binding.saveFab;
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -177,6 +184,7 @@ public class AddFeedFragment extends Fragment {
         model.getAll().observe(getViewLifecycleOwner(), item ->{
             // Update the list of UI
             item.add(feed);
+            binding.setFeed(feed);
         });
 
         // Go to HomeFragment View
