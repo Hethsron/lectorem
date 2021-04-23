@@ -4,7 +4,7 @@
 
 ## Welcome to **Lectorem** !
 
-### Simple RSS Reader application
+### RSS Reader application
 
 It’s fast and clean, giving you the freedom to enjoy your favorite news. !
 
